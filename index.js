@@ -27,6 +27,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/slackAuditorTesting')
 
@@ -69,7 +70,6 @@ app.get('/callback', function(req, res) {
     var id = genID(20);
     var data = JSON.parse(body);
 
-    console.log(data);
     var config = SlackConfig.findOne({
       team_name: data.team_name
     }, function(err, config) {
@@ -88,7 +88,6 @@ app.get('/callback', function(req, res) {
         });
 
         newConfig.save(function() {
-          console.log('created new config.');
           res.redirect('/config/' + id);
         });
       } else {
@@ -134,7 +133,6 @@ app.post('/config', function(req, res) {
     if (req.body.polling) { config.polling = true; } else { config.polling = false; }
 
     config.save(function() {
-      console.log('config saved.');
       res.redirect('/config/' + req.body.config_id + '?saved=true');
     })
   })
@@ -187,9 +185,7 @@ setInterval(function() {
           for (var i = 0; i < data.logins.length; i++) {
             var login = data.logins[i];
 
-            console.log(login.date_last, lastRun)
             if (login.date_last >= Math.floor(lastRun)) {
-              console.log('new login')
               request({
                 method: 'GET',
                 uri: 'https://slack.com/api/chat.postMessage' + objToQuery({

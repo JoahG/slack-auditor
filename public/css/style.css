@@ -1,0 +1,83 @@
+body {
+  background: #c4b0c4;
+  padding: 0;
+  margin: 0;
+}
+
+
+main {
+  max-width: 1400px;
+  padding: 15px;
+  margin: auto;
+  font-family: 'Roboto';
+}
+
+main header h1 {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+  font-size: 48px;
+  font-family: 'Roboto Slab';
+}
+
+main .home {
+  text-align: center;
+}
+
+main p {
+  margin-bottom: 50px;
+}
+
+main .config form {
+   text-align: center;
+   margin: auto;
+   font-size: 18px;
+}
+
+main .config form input[type="submit"] {
+  margin: 10px;
+}
+
+main .config form label span {
+  display: inline-block;
+  margin: 10px;
+}
+
+main .config a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+main .config a:hover {
+  text-decoration: underline;
+}
+
+main .config .card {
+  max-width: 500px;
+  margin: auto;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+main .config .spacer {
+  display: block;
+  margin: 40px auto;
+  max-width: 600px;
+  color: white;
+  position: relative;
+}
+
+main .config .spacer span {
+  position: absolute;
+  background: #C4B0C4;
+  padding: 15px;
+  top: -24px;
+  left: 0;
+  right: 0;
+  max-width: 30px;
+  margin: auto;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}

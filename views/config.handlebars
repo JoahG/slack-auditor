@@ -1,26 +1,40 @@
-<form action="/config" method="post">
-  <input type="hidden" value="{{ config_id }}" name="config_id">
+<section class="config">
+  <form action="/config" method="post">
+    <input type="hidden" value="{{ config_id }}" name="config_id">
 
-  <div class="field">
-    <select name="channel_id">
-      {{#each channels}}
-        <option value="{{ this.id }}" {{ isSelected this.id }}>{{ this.name }}</option>
-      {{/each}}
-    </select>
-  </div>
+    <div class="card">
+      <div class="field">
+        <label for="channel_id">
+          <span>Select Channel to post to</span>
+        </label>
+        <select name="channel_id" id="channel_id">
+          {{#each channels}}
+            <option value="{{ this.id }}" {{ isSelected this.id }}>{{ this.name }}</option>
+          {{/each}}
+        </select>
+      </div>
 
-  <div class="field">
-    <label for="isPolling">
-      <input type="checkbox" {{ isChecked }} name="polling" id="isPolling">
-      <span>polling?</span>
-    </label>
-  </div>
+      <div class="field">
+        <label for="isPolling">
+          <input type="checkbox" {{ isChecked }} name="polling" id="isPolling">
+          <span>Do you want Slack Auditor to listen for logins?</span>
+        </label>
+      </div>
 
-  <div class="field">
-    <input type="submit" value="save">
-  </div>
+      <div class="field">
+        <input type="submit" value="Save Settings">
+      </div>
+    </div>
 
-  <div class="field">
-    <a href="/export/{{ config_id }}">Export all accessLog data</a>
-  </div>
-</form>
+    <span class="spacer">
+      <span> or </span>
+      <hr>
+    </span>
+
+    <div class="card">
+      <div class="field">
+        <a href="/export/{{ config_id }}">Export all access log data</a>
+      </div>
+    </div>
+  </form>
+</section>
