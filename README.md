@@ -1,6 +1,6 @@
 #:police_car: Slack Auditor
 
-Slack app to log all team member logins to a slack channel of your choosing, or export all access log data from the beginning of time.
+Slack app to log all team member logins to a slack channel of your choosing, or export all access log data from the beginning of time. Requires that you are an **admin** of a **paid** Slack team.
 
 ![screenshot of slack](https://github.com/JoahG/slack-auditor/blob/master/public/img/screenshot.png)
 
