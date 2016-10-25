@@ -1,7 +1,7 @@
-var request = require('request');
-var SlackConfig = require('../utils/SlackConfig.js');
-var objToQuery = require('../utils/objToQuery.js');
-var genID = require('../utils/genID.js');
+var request = require('request'),
+    SlackConfig = require('../utils/SlackConfig.js'),
+    objToQuery = require('../utils/objToQuery.js'),
+    genID = require('../utils/genID.js');
 
 module.exports = function(req, res) {
   request({
@@ -41,4 +41,4 @@ module.exports = function(req, res) {
       }
     });
   });
-}
+};

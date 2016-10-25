@@ -1,7 +1,7 @@
-var lastRun = Math.floor(((new Date()) - 10)/1000);
-var SlackConfig = require('./SlackConfig.js');
-var objToQuery = require('./objToQuery.js');
-var request = require('request');
+var lastRun = Math.floor(((new Date()) - 10)/1000),
+    SlackConfig = require('./SlackConfig.js'),
+    objToQuery = require('./objToQuery.js'),
+    request = require('request');
 
 module.exports = setInterval(function() {
   SlackConfig.find({ polling: true }, function(err, configs) {

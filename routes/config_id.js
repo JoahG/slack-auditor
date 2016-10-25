@@ -1,6 +1,6 @@
-var request = require('request');
-var SlackConfig = require('../utils/SlackConfig.js');
-var objToQuery = require('../utils/objToQuery.js');
+var request = require('request'),
+    SlackConfig = require('../utils/SlackConfig.js'),
+    objToQuery = require('../utils/objToQuery.js');
 
 module.exports = function(req, res) {
   SlackConfig.findOne({ id: req.params.id }, function(err, config) {
@@ -30,4 +30,4 @@ module.exports = function(req, res) {
       });
     });
   });
-}
+};

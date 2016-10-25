@@ -1,10 +1,10 @@
 require('dotenv').config();
 
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var app = express();
-var bodyParser = require("body-parser");
-var csv = require('express-csv');
+var express = require('express'),
+    exphbs  = require('express-handlebars'),
+    app = express(),
+    bodyParser = require("body-parser"),
+    csv = require('express-csv');
 
 var pollBooth = require('./utils/pollBooth.js');
 

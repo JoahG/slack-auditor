@@ -7,4 +7,4 @@ module.exports = function(req, res) {
     scope: 'admin channels:read chat:write:bot',
     redirect_uri: 'http://' + req.headers.host + '/callback'
   }));
-}
+};

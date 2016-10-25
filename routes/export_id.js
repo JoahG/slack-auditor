@@ -1,5 +1,5 @@
-var request = require('request');
-var SlackConfig = require('../utils/SlackConfig.js');
+var request = require('request'),
+    SlackConfig = require('../utils/SlackConfig.js');
 
 module.exports = function(req, res) {
   SlackConfig.findOne({ id: req.params.id }, function(err, config) {
@@ -18,8 +18,8 @@ module.exports = function(req, res) {
         } else {
           next(logins.concat(data.logins));
         }
-      })
-    }
+      });
+    };
 
     getPages(1, [], function(logins) {
       res.csv([Object.keys(logins[0])].concat(logins));
