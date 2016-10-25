@@ -7,6 +7,6 @@ module.exports = function(req, res) {
 
     config.save(function() {
       res.redirect('/config/' + req.body.config_id + '?saved=true');
-    })
-  })
+    });
+  });
 };
