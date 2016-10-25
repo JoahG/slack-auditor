@@ -16,7 +16,7 @@ module.exports = setInterval(function() {
           })
         }, function(err, resp, body) {
           var data = JSON.parse(body);
-
+          if (!data.logins) return false;
           for (var i = 0; i < data.logins.length; i++) {
             var login = data.logins[i];
 
